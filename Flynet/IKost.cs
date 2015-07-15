@@ -8,5 +8,13 @@ namespace Flynet
 {
     interface IKost
     {
+        decimal BasisKostprijsPerDag
+        {
+            // get is mss overbodig ... aan de andere kant, het kan geen kwaad.
+            get;
+            set;
+        }
+
+        decimal BerekenTotaleKostprijsPerDag();
     }
 }
