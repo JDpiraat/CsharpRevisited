@@ -42,12 +42,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IKost.cs" />
+    <Compile Include="Personeel\Adres.cs" />
+    <Compile Include="Personeel\CabineCrew.cs" />
+    <Compile Include="Personeel\Certificaat.cs" />
+    <Compile Include="Personeel\CockpitCrew.cs" />
+    <Compile Include="Personeel\NietVliegendpersoneelslid.cs" />
+    <Compile Include="Personeel\Personeelslid.cs" />
+    <Compile Include="Personeel\ViegendPersoneelslid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vloot\LuchtVaartuig.cs" />
+    <Compile Include="Vloot\PassagiersVliegtuig.cs" />
+    <Compile Include="Vloot\VliegMaatschappij.cs" />
+    <Compile Include="Vloot\VrachtVliegtuig.cs" />
+    <Compile Include="Vlucht.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
