@@ -14,19 +14,11 @@ namespace Flynet.Vloot
             set;
         }
 
-        public string Type { get; private set; }
+        public string Type { get; set; }
 
-        public int Kruissnelheid { get; private set; } // km/u
+        public int Kruissnelheid { get; set; } // km/u
 
-        public int Vliegbereik { get; private set; } // km
-
-        protected LuchtVaartuig(string type, int kruissnelheid, int vliegbereik, decimal basisKostprijsPerDag)
-        {
-            this.Type = type;
-            this.Kruissnelheid = kruissnelheid;
-            this.Vliegbereik = vliegbereik;
-            this.BasisKostprijsPerDag = basisKostprijsPerDag;
-        }
+        public int Vliegbereik { get; set; } // km        
 
         // overrides object.Equals
         // toch wel quick en zeker dirty
