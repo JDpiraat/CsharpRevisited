@@ -10,14 +10,9 @@ namespace Flynet.Vloot
     {
         public static readonly decimal KostPerZetel = 10m;
 
-        public int AantalPassagiers { get; private set; } // het totaal aantal zetels 
+        public int AantalPassagiers { get; set; } // het totaal aantal zetels 
 
-        public override decimal BasisKostprijsPerDag { get; set; }
-
-        public PassagiersVliegtuig(string type, int kruissnelheid, int vliegbereik, decimal basisKostprijsPerDag, int aantalPassagiers) : base(type, kruissnelheid, vliegbereik, basisKostprijsPerDag)
-        {
-            this.AantalPassagiers = aantalPassagiers;
-        }
+        public override decimal BasisKostprijsPerDag { get; set; }        
 
         public override decimal BerekenTotaleKostprijsPerDag()
         {

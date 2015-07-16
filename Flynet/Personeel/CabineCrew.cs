@@ -12,7 +12,11 @@ namespace Flynet.Personeel
 
         public static readonly decimal PurserPercentage = 1.2m; // 20% toeslag
 
-        public static readonly Certificaat EhboCertificaat = new Certificaat("EHBO", "First Aid");
+        public static readonly Certificaat EhboCertificaat = new Certificaat
+             {
+                 CertificaatAfkorting = "EHBO",
+                 CertificaatOmschrijving = "First Aid"
+             };
         public static readonly decimal EhboCertificaatToeslag = 5m;
 
         private Graad graad;
@@ -34,7 +38,7 @@ namespace Flynet.Personeel
         public string Werkpositie { get; private set; }
 
         public CabineCrew(string personeelsID, string naam, Graad graad, IList<Certificaat> certificaten, string werkpositie)
-            : base(personeelsID, naam, graad, certificaten) 
+            : base(personeelsID, naam, graad, certificaten)
         {
             this.Werkpositie = werkpositie;
         }

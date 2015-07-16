@@ -8,15 +8,9 @@ namespace Flynet.Personeel
 {
     class Certificaat
     {
-        public string CertificaatAfkorting { get; private set; }
+        public string CertificaatAfkorting { get; set; }
 
-        public string CertificaatOmschrijving { get; private set; }
-
-        public Certificaat(string certificaatAfkorting, string certificaatOmschrijving)
-        {
-            this.CertificaatAfkorting = certificaatAfkorting;
-            this.CertificaatOmschrijving = certificaatOmschrijving;
-        }
+        public string CertificaatOmschrijving { get; set; }        
 
         // override object.Equals
         public override bool Equals(object obj)

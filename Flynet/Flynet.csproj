@@ -51,7 +51,7 @@
     <Compile Include="Personeel\Personeelslid.cs" />
     <Compile Include="Personeel\VliegendPersoneelslid.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramTestNaVierUur.cs" />
+    <Compile Include="ProgramAangepastAanTekstFileInhoud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vloot\LuchtVaartuig.cs" />
     <Compile Include="Vloot\PassagiersVliegtuig.cs" />

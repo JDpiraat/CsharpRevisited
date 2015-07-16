@@ -12,7 +12,10 @@ namespace Flynet
     {
         static void Main(string[] args)
         {
-            TestNaVierUur();
+            // werkt niet in de "forget-readonly-properties" branche : 
+            // TestNaVierUur();
+
+            CopyPasteAlleObjectenUitTekstFile();
 
             // mooi afsluiten programma
             Console.WriteLine();

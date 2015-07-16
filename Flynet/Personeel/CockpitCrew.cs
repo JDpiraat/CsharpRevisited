@@ -15,7 +15,11 @@ namespace Flynet.Personeel
         public static readonly decimal SecondOfficerPercentage = 1.1m; // 10% toeslag
 
         public static readonly decimal extraToeslagCplCertificaat = 50m;
-        public static readonly Certificaat CplCertificaat = new Certificaat("CPL", "Commercial Pilot Licence");
+        public static readonly Certificaat CplCertificaat = new Certificaat
+        {
+            CertificaatAfkorting = "CPL",
+            CertificaatOmschrijving = "Commercial Pilot License"
+        };
 
         private Graad graad;
 
