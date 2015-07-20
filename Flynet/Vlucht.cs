@@ -57,7 +57,7 @@ namespace Flynet
         // overrides Object.ToString
         public override string ToString()
         {
-            return string.Format("({0}) {1} duurtijd: {2}, totale kostprijs: {3}", VluchtID, Bestemming, Duurtijd, BerekenVluchtKost());
+            return string.Format("{0}: {1} ({2}) - {3} ({4}) - vluchtprijs: {5}", VluchtID, Bestemming, VliegMaatschappij.VliegMaatschappijNaam, Toestel.Type, Toestel.BerekenTotaleKostprijsPerDag()*Duurtijd , BerekenVluchtKost());
         }
     }
 
