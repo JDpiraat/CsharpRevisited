@@ -16,8 +16,8 @@ namespace Flynet
             // TestNaVierUur();
 
             // oplossing opgave deel 2 dus ...
-            IList<Vlucht> Vluchten = AanmakenVluchtObjecten();
-            PrintOverzicht(Vluchten);
+            IList<Vlucht> vluchten = AanmakenVluchtObjecten();
+            PrintOverzicht(vluchten);
 
             // mooi afsluiten programma
             Console.WriteLine();

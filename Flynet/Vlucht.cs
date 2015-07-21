@@ -35,6 +35,11 @@ namespace Flynet
             }
         }
 
+        /* algemene opmerking maar hier specifiek 'uitgewerkt':
+         * OOP 'zegt' programmeren naar interfaces ... 
+         * mss hier toch gewoon List? Het zou minder cast-ings geven in de PrintVlucht methode in ProgramAangepastAanTekstFileInhoud:
+         * (List<VliegendPersoneelslid>)vlucht.Personeel omdat Ilist die ForEach niet kent ...
+         */
         public IList<VliegendPersoneelslid> Personeel { get; private set; }
 
         public Vlucht(int vluchtID, string bestemming, int duurtijd, VliegMaatschappij vliegMaatschappij, LuchtVaartuig toestel, IList<VliegendPersoneelslid> personeel)
@@ -57,7 +62,7 @@ namespace Flynet
         // overrides Object.ToString
         public override string ToString()
         {
-            return string.Format("{0}: {1} ({2}) - {3} ({4}) - vluchtprijs: {5}", VluchtID, Bestemming, VliegMaatschappij.VliegMaatschappijNaam, Toestel.Type, Toestel.BerekenTotaleKostprijsPerDag()*Duurtijd , BerekenVluchtKost());
+            return string.Format("{0}: {1} ({2}) - {3} ({4}) - vluchtprijs: {5}", VluchtID, Bestemming, VliegMaatschappij.VliegMaatschappijNaam, Toestel.Type, Toestel.BerekenTotaleKostprijsPerDag() * Duurtijd, BerekenVluchtKost());
         }
     }
 

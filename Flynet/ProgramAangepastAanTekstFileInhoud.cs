@@ -149,50 +149,50 @@ namespace Flynet
 
             //Adressen
             //****************************************************************************************
-            Adres Europalaan = new Adres("Europalaan 37", "3600", "Genk");
+            Adres europalaan = new Adres("Europalaan 37", "3600", "Genk");
 
-            Adres Keizerslaan = new Adres("Keizerslaan 11", "1000", "Brussel");
+            Adres keizerslaan = new Adres("Keizerslaan 11", "1000", "Brussel");
 
             //VliegendPersoneel
             //****************************************************************************************
 
             //Cockpit
 
-            CockpitCrew CaptianKirk = new CockpitCrew("001", "Captain Kirk", Graad.Captain, new List<Certificaat> { PPL, ATPL, CPL, SURV }, 5000)
+            CockpitCrew captianKirk = new CockpitCrew("001", "Captain Kirk", Graad.Captain, new List<Certificaat> { PPL, ATPL, CPL, SURV }, 5000)
             {
-                Adres = Europalaan,
+                Adres = europalaan,
                 BasisKostprijsPerDag = 500m
             };
 
-            CockpitCrew Spock = new CockpitCrew("002", "Spock", Graad.SecondOfficer, new List<Certificaat> { PPL, ATPL, CPL, IFS }, 4500)
+            CockpitCrew spock = new CockpitCrew("002", "Spock", Graad.SecondOfficer, new List<Certificaat> { PPL, ATPL, CPL, IFS }, 4500)
             {
-                Adres = Keizerslaan,
+                Adres = keizerslaan,
                 BasisKostprijsPerDag = 400m
             };
 
-            CockpitCrew McCoy = new CockpitCrew("003", "McCoy", Graad.SeniorFlightOfficer, new List<Certificaat> { PPL, ME, MCC, EHBO }, 4500)
+            CockpitCrew mcCoy = new CockpitCrew("003", "McCoy", Graad.SeniorFlightOfficer, new List<Certificaat> { PPL, ME, MCC, EHBO }, 4500)
             {
-                Adres = Europalaan,
+                Adres = europalaan,
                 BasisKostprijsPerDag = 400m
             };
 
             //Cabine
 
-            CabineCrew PavelCehekov = new CabineCrew("004", "Pavel Cehekov", Graad.Purser, new List<Certificaat> { ME, MCC, EHBO, IFS }, "deur1")
+            CabineCrew pavelCehekov = new CabineCrew("004", "Pavel Cehekov", Graad.Purser, new List<Certificaat> { ME, MCC, EHBO, IFS }, "deur1")
             {
-                Adres = Europalaan,
+                Adres = europalaan,
                 BasisKostprijsPerDag = 300m
             };
 
-            CabineCrew HikaruSulu = new CabineCrew("005", "Hikaru Sulu", Graad.Steward, new List<Certificaat> { ME, MCC, FIRE, SURV, IFS }, "deur2")
+            CabineCrew hikaruSulu = new CabineCrew("005", "Hikaru Sulu", Graad.Steward, new List<Certificaat> { ME, MCC, FIRE, SURV, IFS }, "deur2")
             {
-                Adres = Europalaan,
+                Adres = europalaan,
                 BasisKostprijsPerDag = 300m
             };
 
-            CabineCrew SkyWalker = new CabineCrew("006", "SkyWalker", Graad.Steward, new List<Certificaat> { FIRE, SURV, IFS, EHBO }, "nooduitgang")
+            CabineCrew skyWalker = new CabineCrew("006", "SkyWalker", Graad.Steward, new List<Certificaat> { FIRE, SURV, IFS, EHBO }, "nooduitgang")
             {
-                Adres = Keizerslaan,
+                Adres = keizerslaan,
                 BasisKostprijsPerDag = 300m
             };
 
@@ -200,49 +200,49 @@ namespace Flynet
             //Vliegmaatschappijen
             //****************************************************************************************
 
-            VliegMaatschappij BrusselsAirlines = new VliegMaatschappij(1, "BrusselsAirlines", new List<LuchtVaartuig> { airbusA319, boeing737, boeing787, britishAerospace146 });
+            VliegMaatschappij brusselsAirlines = new VliegMaatschappij(1, "BrusselsAirlines", new List<LuchtVaartuig> { airbusA319, boeing737, boeing787, britishAerospace146 });
 
             VliegMaatschappij TNTAirways = new VliegMaatschappij(2, "TNTAirways", new List<LuchtVaartuig> { antonovAn30, antonovAn225, antonovAn30 });
 
-            VliegMaatschappij JetairFly = new VliegMaatschappij(3, "JetairFly", new List<LuchtVaartuig> { boeing737, boeing787 });
+            VliegMaatschappij jetairFly = new VliegMaatschappij(3, "JetairFly", new List<LuchtVaartuig> { boeing737, boeing787 });
 
-            VliegMaatschappij ThomasCook = new VliegMaatschappij(4, "ThomasCook", new List<LuchtVaartuig> { airbusA319, boeing787 });
+            VliegMaatschappij thomasCook = new VliegMaatschappij(4, "ThomasCook", new List<LuchtVaartuig> { airbusA319, boeing787 });
 
             //****************************************************************************************
             //Vluchten
             //****************************************************************************************
 
-            IList<Vlucht> Vluchten = new List<Vlucht>();
+            IList<Vlucht> vluchten = new List<Vlucht>();
 
-            Vlucht NewYork = new Vlucht(1, "New York", 2, BrusselsAirlines, boeing787, new List<VliegendPersoneelslid> { CaptianKirk, Spock, PavelCehekov, HikaruSulu });
-            NewYork.ToString();
+            Vlucht newYork = new Vlucht(1, "New York", 2, brusselsAirlines, boeing787, new List<VliegendPersoneelslid> { captianKirk, spock, pavelCehekov, hikaruSulu });
+            newYork.ToString();
 
-            Vlucht Bejing = new Vlucht(2, "Bejing", 1, TNTAirways, antonovAn225, new List<VliegendPersoneelslid> { CaptianKirk, SkyWalker });
+            Vlucht bejing = new Vlucht(2, "Bejing", 1, TNTAirways, antonovAn225, new List<VliegendPersoneelslid> { captianKirk, skyWalker });
 
-            Vlucht Sydney = new Vlucht(3, "Sydney", 3, ThomasCook, airbusA319, new List<VliegendPersoneelslid> { CaptianKirk, Spock, PavelCehekov, HikaruSulu });
+            Vlucht sydney = new Vlucht(3, "Sydney", 3, thomasCook, airbusA319, new List<VliegendPersoneelslid> { captianKirk, spock, pavelCehekov, hikaruSulu });
 
-            Vlucht Signapore = new Vlucht(4, "Singnapore", 2, BrusselsAirlines, britishAerospace146, new List<VliegendPersoneelslid> { McCoy, HikaruSulu, SkyWalker });
+            Vlucht signapore = new Vlucht(4, "Singnapore", 2, brusselsAirlines, britishAerospace146, new List<VliegendPersoneelslid> { mcCoy, hikaruSulu, skyWalker });
 
-            Vlucht Malta = new Vlucht(5, "Malta", 1, JetairFly, boeing737, new List<VliegendPersoneelslid> { CaptianKirk, Spock, SkyWalker });
+            Vlucht malta = new Vlucht(5, "Malta", 1, jetairFly, boeing737, new List<VliegendPersoneelslid> { captianKirk, spock, skyWalker });
 
-            Vluchten.Add(NewYork);
-            Vluchten.Add(Bejing);
-            Vluchten.Add(Sydney);
-            Vluchten.Add(Signapore);
-            Vluchten.Add(Malta);
+            vluchten.Add(newYork);
+            vluchten.Add(bejing);
+            vluchten.Add(sydney);
+            vluchten.Add(signapore);
+            vluchten.Add(malta);
 
-            return Vluchten;
+            return vluchten;
         }
 
         private static void PrintOverzicht(IList<Vlucht> vluchten)
         {
-            IList<Vlucht> PassagiersVluchten = (IList<Vlucht>)vluchten.Where(vlucht => (vlucht.Toestel is PassagiersVliegtuig)).ToList();
-            IList<Vlucht> VrachtVluchten = (IList<Vlucht>)vluchten.Where(vlucht => (vlucht.Toestel is VrachtVliegtuig)).ToList();
+            IList<Vlucht> passagiersVluchten = (IList<Vlucht>)vluchten.Where(vlucht => (vlucht.Toestel is PassagiersVliegtuig)).ToList();
+            IList<Vlucht> vrachtVluchten = (IList<Vlucht>)vluchten.Where(vlucht => (vlucht.Toestel is VrachtVliegtuig)).ToList();
 
             Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-");
             Console.WriteLine("PASSAGIERSVLUCHTEN:");
             Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-");
-            foreach (Vlucht vlucht in PassagiersVluchten)
+            foreach (Vlucht vlucht in passagiersVluchten)
             {
                 PrintVlucht(vlucht);
             }
@@ -251,7 +251,7 @@ namespace Flynet
             Console.WriteLine("VRACHTVLUCHTEN:");
             Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-");
             Console.WriteLine();
-            foreach (Vlucht vlucht in VrachtVluchten)
+            foreach (Vlucht vlucht in vrachtVluchten)
             {
                 PrintVlucht(vlucht);
             }
@@ -267,6 +267,7 @@ namespace Flynet
             Console.WriteLine("Totale personeelskosten: {0}", vlucht.Personeel.Sum(personeelslid => ((IKost)personeelslid).BerekenTotaleKostprijsPerDag() * vlucht.Duurtijd));
             Console.WriteLine();
             Console.WriteLine("Cockpitpersoneel:");
+            // zie opm bij Personeel in Vlucht
             ((List<VliegendPersoneelslid>)vlucht.Personeel).ForEach(personeelslid =>
             {
                 if (personeelslid is CockpitCrew)
