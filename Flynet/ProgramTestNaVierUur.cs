@@ -13,76 +13,76 @@ namespace Flynet
         private static void TestNaVierUur()
         {
             Console.WriteLine("* NietVliegendpersoneelslid:");
-            Personeelslid PersoneelNietVliegend = new NietVliegendpersoneelslid("id", "Johan")
+            Personeelslid personeelNietVliegend = new NietVliegendpersoneelslid("id", "Johan")
             {
                 Adres = new Adres("5", "5000A", "Ergens"),
                 Afdeling = Afdeling.Logistiek,
                 UrenPerWeek = 37,
                 BasisKostprijsPerDag = 350m
             };
-            Console.WriteLine(PersoneelNietVliegend);
-            Console.WriteLine(((IKost)PersoneelNietVliegend).BerekenTotaleKostprijsPerDag());
+            Console.WriteLine(personeelNietVliegend);
+            Console.WriteLine(((IKost)personeelNietVliegend).BerekenTotaleKostprijsPerDag());
 
             Console.WriteLine("* CockpitCrew:");
-            Personeelslid PersoneelCockpit = new CockpitCrew("id", "Johan", Graad.Captain,
+            Personeelslid personeelCockpit = new CockpitCrew("id", "Johan", Graad.Captain,
                 new List<Certificaat> { new Certificaat("PPL", "Private Pilot Licence"), new Certificaat("CPL", "Commercial Pilot Licence") }, 20470)
             {
                 Adres = new Adres("6", "6000B", "Nergens"),
                 BasisKostprijsPerDag = 500m
             };
-            Console.WriteLine(PersoneelCockpit);
-            Console.WriteLine(((IKost)PersoneelCockpit).BerekenTotaleKostprijsPerDag());
+            Console.WriteLine(personeelCockpit);
+            Console.WriteLine(((IKost)personeelCockpit).BerekenTotaleKostprijsPerDag());
 
             Console.WriteLine("* CabineCrew:");
-            Personeelslid PersoneelCabine = new CabineCrew("id", "Johan", Graad.Purser,
+            Personeelslid personeelCabine = new CabineCrew("id", "Johan", Graad.Purser,
                 new List<Certificaat> { new Certificaat("PPL", "Private Pilot Licence"), new Certificaat("CPL", "Commercial Pilot Licence") }, "deur 1")
             {
                 Adres = new Adres("7", "7000C", "Overal"),
                 BasisKostprijsPerDag = 200m
             };
-            Console.WriteLine(PersoneelCabine);
-            Console.WriteLine(((IKost)PersoneelCabine).BerekenTotaleKostprijsPerDag());
+            Console.WriteLine(personeelCabine);
+            Console.WriteLine(((IKost)personeelCabine).BerekenTotaleKostprijsPerDag());
 
             Console.WriteLine("* PassagierVliegtuig:");
-            LuchtVaartuig PassagiersVliegtuig = new PassagiersVliegtuig("Boeing A730", 500, 25000, 2000m, 270);
-            Console.WriteLine(PassagiersVliegtuig);
-            Console.WriteLine(PassagiersVliegtuig.BerekenTotaleKostprijsPerDag());
+            LuchtVaartuig passagiersVliegtuig = new PassagiersVliegtuig("Boeing A730", 500, 25000, 2000m, 270);
+            Console.WriteLine(passagiersVliegtuig);
+            Console.WriteLine(passagiersVliegtuig.BerekenTotaleKostprijsPerDag());
 
             Console.WriteLine("* VrachtVliegtuig:");
-            LuchtVaartuig VrachtVliegtuig = new VrachtVliegtuig("Loadking", 400, 2000, 1500m, 800);
-            Console.WriteLine(VrachtVliegtuig);
-            Console.WriteLine(VrachtVliegtuig.BerekenTotaleKostprijsPerDag());
+            LuchtVaartuig vrachtVliegtuig = new VrachtVliegtuig("Loadking", 400, 2000, 1500m, 800);
+            Console.WriteLine(vrachtVliegtuig);
+            Console.WriteLine(vrachtVliegtuig.BerekenTotaleKostprijsPerDag());
 
             Console.WriteLine("* VliegMaatschappij:");            
-            VliegMaatschappij VliegMaatschappij = new VliegMaatschappij(1, "Sabena", new List<LuchtVaartuig> { PassagiersVliegtuig, VrachtVliegtuig });
-            Console.WriteLine(VliegMaatschappij);
+            VliegMaatschappij vliegMaatschappij = new VliegMaatschappij(1, "Sabena", new List<LuchtVaartuig> { passagiersVliegtuig, vrachtVliegtuig });
+            Console.WriteLine(vliegMaatschappij);
 
             Console.WriteLine("* Vlucht OK:");
-            Vlucht VluchtOK = null;            
+            Vlucht vluchtOK = null;            
             try
             {
-                VluchtOK = new Vlucht(1, "Hier", 5, VliegMaatschappij, PassagiersVliegtuig,
-                        new List<VliegendPersoneelslid> { (VliegendPersoneelslid)PersoneelCabine, (VliegendPersoneelslid)PersoneelCockpit });
+                vluchtOK = new Vlucht(1, "Hier", 5, vliegMaatschappij, passagiersVliegtuig,
+                        new List<VliegendPersoneelslid> { (VliegendPersoneelslid)personeelCabine, (VliegendPersoneelslid)personeelCockpit });
             }
             catch (ToestelBehoortNietTotVlootException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine(VluchtOK);
+            Console.WriteLine(vluchtOK);
 
             Console.WriteLine("* Vlucht niet OK:");
-            VliegMaatschappij.RemoveLuchtVaartuig(PassagiersVliegtuig);
-            Vlucht VluchtNietOK = null;
+            vliegMaatschappij.RemoveLuchtVaartuig(passagiersVliegtuig);
+            Vlucht vluchtNietOK = null;
             try
             {
-                VluchtNietOK = new Vlucht(1, "Hier", 5, VliegMaatschappij, PassagiersVliegtuig,
-                        new List<VliegendPersoneelslid> { (VliegendPersoneelslid)PersoneelCabine, (VliegendPersoneelslid)PersoneelCockpit });
+                vluchtNietOK = new Vlucht(1, "Hier", 5, vliegMaatschappij, passagiersVliegtuig,
+                        new List<VliegendPersoneelslid> { (VliegendPersoneelslid)personeelCabine, (VliegendPersoneelslid)personeelCockpit });
             }
             catch (ToestelBehoortNietTotVlootException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine(VluchtNietOK);
+            Console.WriteLine(vluchtNietOK);
         }
     }
 }
