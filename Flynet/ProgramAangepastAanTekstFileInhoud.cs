@@ -200,13 +200,13 @@ namespace Flynet
             //Vliegmaatschappijen
             //****************************************************************************************
 
-            VliegMaatschappij brusselsAirlines = new VliegMaatschappij(1, "BrusselsAirlines", new List<LuchtVaartuig> { airbusA319, boeing737, boeing787, britishAerospace146 });
+            VliegMaatschappij brusselsAirlines = new VliegMaatschappij(1, Maatschappij.BrusselsAirlines, new List<LuchtVaartuig> { airbusA319, boeing737, boeing787, britishAerospace146 });
 
-            VliegMaatschappij TNTAirways = new VliegMaatschappij(2, "TNTAirways", new List<LuchtVaartuig> { antonovAn30, antonovAn225, antonovAn30 });
+            VliegMaatschappij TNTAirways = new VliegMaatschappij(2, Maatschappij.TNTAirways, new List<LuchtVaartuig> { antonovAn30, antonovAn225, antonovAn30 });
 
-            VliegMaatschappij jetairFly = new VliegMaatschappij(3, "JetairFly", new List<LuchtVaartuig> { boeing737, boeing787 });
+            VliegMaatschappij jetairFly = new VliegMaatschappij(3, Maatschappij.Jetairfly, new List<LuchtVaartuig> { boeing737, boeing787 });
 
-            VliegMaatschappij thomasCook = new VliegMaatschappij(4, "ThomasCook", new List<LuchtVaartuig> { airbusA319, boeing787 });
+            VliegMaatschappij thomasCook = new VliegMaatschappij(4, Maatschappij.ThomasCook, new List<LuchtVaartuig> { airbusA319, boeing787 });
 
             //****************************************************************************************
             //Vluchten
