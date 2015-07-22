@@ -10,11 +10,11 @@ namespace Flynet.Vloot
     {
         public int VliegMaatschappijID { get; private set; }
 
-        public string VliegMaatschappijNaam { get; private set; }
+        public Maatschappij VliegMaatschappijNaam { get; private set; }
 
         public IList<LuchtVaartuig> Vloot { get; private set; }
 
-        public VliegMaatschappij(int vliegMaatschappjiID, string vliegMaatschappijNaam, IList<LuchtVaartuig> vloot)
+        public VliegMaatschappij(int vliegMaatschappjiID, Maatschappij vliegMaatschappijNaam, IList<LuchtVaartuig> vloot)
         {
             this.VliegMaatschappijID = vliegMaatschappjiID;
             this.VliegMaatschappijNaam = vliegMaatschappijNaam;
@@ -53,5 +53,13 @@ namespace Flynet.Vloot
         {
             return VliegMaatschappijNaam + " (" + VliegMaatschappijID + ")";
         }
+    }
+
+    public enum Maatschappij
+    {
+        BrusselsAirlines,
+        Jetairfly,
+        ThomasCook,
+        TNTAirways
     }
 }

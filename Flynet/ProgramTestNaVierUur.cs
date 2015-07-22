@@ -54,7 +54,7 @@ namespace Flynet
             Console.WriteLine(vrachtVliegtuig.BerekenTotaleKostprijsPerDag());
 
             Console.WriteLine("* VliegMaatschappij:");            
-            VliegMaatschappij vliegMaatschappij = new VliegMaatschappij(1, "Sabena", new List<LuchtVaartuig> { passagiersVliegtuig, vrachtVliegtuig });
+            VliegMaatschappij vliegMaatschappij = new VliegMaatschappij(1, Maatschappij.BrusselsAirlines, new List<LuchtVaartuig> { passagiersVliegtuig, vrachtVliegtuig });
             Console.WriteLine(vliegMaatschappij);
 
             Console.WriteLine("* Vlucht OK:");
